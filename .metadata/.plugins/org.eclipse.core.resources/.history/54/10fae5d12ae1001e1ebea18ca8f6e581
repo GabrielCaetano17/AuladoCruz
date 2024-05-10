@@ -1,0 +1,10 @@
+package br.itb.projeto.pizzaria3a.service;
+
+import org.springframework.stereotype.Service;
+
+@Service
+public class UsuarioService {
+
+	private UsuarioRepository usuarioRepository 
+	
+}
