@@ -3,11 +3,9 @@ package br.itb.projeto.pizzaria3a.service;
 import java.time.LocalDateTime;
 import java.util.Base64;
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
-import br.itb.projeto.pizzaria3a.model.entity.Mensagem;
 import br.itb.projeto.pizzaria3a.model.entity.Usuario;
 import br.itb.projeto.pizzaria3a.model.repository.UsuarioRepository;
 import jakarta.transaction.Transactional;
@@ -58,20 +56,5 @@ public class UsuarioService {
 			
 		}
 		return null;
-	}
-	
-	@Transactional
-	public Usuario inativa(long id) {
-		
-		Optional<Usuario> _usuario = usuarioRepository.findById(id);
-		
-		if (_usuario.isPresent()) {
-			Usuario usuarioAtualizada = _usuario.get();
-			usuarioAtualizada.setStatusUsuario("INATIVA");
-			
-			return usuarioRepository.save(usuarioAtualizada);
-		}
-		return null;
-		
 	}
 }

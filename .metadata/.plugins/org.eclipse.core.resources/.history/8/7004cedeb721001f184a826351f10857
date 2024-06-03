@@ -63,7 +63,7 @@ public class UsuarioService {
 	@Transactional
 	public Usuario inativa(long id) {
 		
-		Optional<Usuario> _usuario = usuarioRepository.findById(id);
+		Optional<Usuario> _usuario = usuarioRepository.findById(id);-
 		
 		if (_usuario.isPresent()) {
 			Usuario usuarioAtualizada = _usuario.get();
