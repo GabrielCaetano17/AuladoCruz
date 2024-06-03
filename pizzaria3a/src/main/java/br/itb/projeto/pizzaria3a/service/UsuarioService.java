@@ -1,6 +1,7 @@
 package br.itb.projeto.pizzaria3a.service;
 
 import java.time.LocalDateTime;
+import java.util.Base64;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
@@ -33,9 +34,27 @@ public class UsuarioService {
 	@Transactional
 	public Usuario create(Usuario usuario) {
 		
+		String senha = Base64.getEncoder()
+				.encodeToString(usuario.getSenha().getBytes());
+				usuario.setSenha(senha);
+		
 		usuario.setDataCadastro(LocalDateTime.now());
 		usuario.setStatusUsuario("ATIVO");
 		
 		return usuarioRepository.save(usuario);
+	}
+	@Transactional
+	
+	public Usuario signin(String email, String senha) {
+		Usuario usuario = usuarioRepository.findByEmail(email);
+		if (usuario.getStatusUsuario().equals("ATIVO")) {
+			byte[] decodedPass = Base64.getDecoder()
+					.decode(usuario.getSenha());
+			if (new String(decodedPass).equals(senha)) {
+				return usuario;
+			}
+			
+		}
+		return null;
 	}
 }

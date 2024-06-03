@@ -5,6 +5,9 @@ import java.util.List;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import br.itb.projeto.pizzaria3a.model.entity.Produto;
@@ -26,4 +29,21 @@ public class ProdutoController {
 		return new ResponseEntity<List<Produto>>
 		(produtos, HttpStatus.OK);
 }
+	
+	@GetMapping("findById/{id}")
+	public ResponseEntity<Produto> findById(
+			@PathVariable long id){
+		Produto produto = produtoService.findById(id);
+		return new ResponseEntity<Produto>(produto, HttpStatus.OK);
+	}
+	
+	@PostMapping("create")
+	public ResponseEntity<Produto> create(
+			@RequestBody Produto produto) {
+		Produto _produto = produtoService.create(produto);
+		
+		return new ResponseEntity<Produto>(
+				_produto, HttpStatus.OK);
+	}
+	
 }

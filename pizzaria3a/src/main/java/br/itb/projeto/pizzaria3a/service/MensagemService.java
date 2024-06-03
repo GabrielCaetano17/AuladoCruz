@@ -2,6 +2,7 @@ package br.itb.projeto.pizzaria3a.service;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
@@ -27,11 +28,40 @@ public class MensagemService {
 	// jakarta.transaction.Transactional
 	@Transactional
 	public Mensagem create(Mensagem mensagem) {
-		
+
 		mensagem.setDataMensagem(LocalDateTime.now());
 		mensagem.setStatusMensagem("ATIVO");
 
 		return mensagemRepository.save(mensagem);
 	}
 
+	@Transactional
+	public Mensagem update(long id) {
+
+		Optional<Mensagem> _mensagem = mensagemRepository.findById(id);
+
+		if (_mensagem.isPresent()) {
+			Mensagem mensagemAtualizada = _mensagem.get();
+			mensagemAtualizada.setStatusMensagem("LIDA");
+
+			return mensagemRepository.save(mensagemAtualizada);
+
+		}
+		return null;
+	}
+	
+	@Transactional
+	public Mensagem inativa(long id) {
+		
+		Optional<Mensagem> _mensagem = mensagemRepository.findById(id);
+		
+		if (_mensagem.isPresent()) {
+			Mensagem mensagemAtualizada = _mensagem.get();
+			mensagemAtualizada.setStatusMensagem("INATIVA");
+			
+			return mensagemRepository.save(mensagemAtualizada);
+		}
+		return null;
+		
+	}
 }
