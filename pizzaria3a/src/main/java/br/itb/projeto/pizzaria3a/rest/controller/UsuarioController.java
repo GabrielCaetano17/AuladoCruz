@@ -12,8 +12,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-
-import br.itb.projeto.pizzaria3a.model.entity.Mensagem;
 import br.itb.projeto.pizzaria3a.model.entity.Usuario;
 import br.itb.projeto.pizzaria3a.service.UsuarioService;
 
@@ -68,6 +66,15 @@ public class UsuarioController {
 	public ResponseEntity<Usuario> inativa(
 			@PathVariable long id) {
 		Usuario _usuario = usuarioService.inativa(id);
+		
+		return new ResponseEntity<Usuario>(
+				_usuario, HttpStatus.OK);
+	}
+	
+	@PutMapping("rativado/{id}")
+	public ResponseEntity<Usuario> reativar(
+			@PathVariable long id) {
+		Usuario _usuario = usuarioService.reativar(id);
 		
 		return new ResponseEntity<Usuario>(
 				_usuario, HttpStatus.OK);

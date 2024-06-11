@@ -1,9 +1,11 @@
 package br.itb.projeto.pizzaria3a.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 import br.itb.projeto.pizzaria3a.model.entity.Produto;
+import br.itb.projeto.pizzaria3a.model.entity.Usuario;
 import br.itb.projeto.pizzaria3a.model.repository.ProdutoRepository;
 import jakarta.transaction.Transactional;
 
@@ -36,5 +38,36 @@ public class ProdutoService {
 		
 		return produtoRepository.save(produto);
 	}
+	
+	@Transactional
+	public Produto inativa(long id) {
+		
+		Optional<Produto> _produto = produtoRepository.findById(id);
+		
+		if (_produto.isPresent()) {
+			Produto produtoAtualizado = _produto.get();
+			produtoAtualizado.setStatusProd("INATIVA");
+			
+			return produtoRepository.save(produtoAtualizado);
+		}
+		return null;
+	}
+	
+
+	@Transactional
+	public Produto alterar(long id, Produto produto) {
+		
+		Optional<Produto> _produto = produtoRepository.findById(id);
+		
+		if (_produto.isPresent()) {
+			Produto produtoAtualizado = _produto.get();
+			
+			produtoAtualizado.setPreco(produto.getPreco());
+			
+			return produtoRepository.save(produtoAtualizado);
+		}
+		return null;
+	}
+	
 	
 }
