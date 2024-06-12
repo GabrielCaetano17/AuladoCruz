@@ -48,7 +48,7 @@ public class UsuarioController {
 		return new ResponseEntity<Usuario>(_usuario, HttpStatus.OK);
 	}
 
-	@PostMapping
+	@PostMapping("signin")
 	public ResponseEntity<?> signin(
 			@RequestParam String email,
 			@RequestParam String senha) {
@@ -75,6 +75,16 @@ public class UsuarioController {
 	public ResponseEntity<Usuario> reativar(
 			@PathVariable long id) {
 		Usuario _usuario = usuarioService.reativar(id);
+		
+		return new ResponseEntity<Usuario>(
+				_usuario, HttpStatus.OK);
+	}
+	
+	@PutMapping("alterarSenha/{id}")
+	public ResponseEntity<Usuario> alterarSenha(
+			@PathVariable long id,
+			@RequestBody Usuario usuario){
+		Usuario _usuario = usuarioService.alterarSenha(id, usuario);
 		
 		return new ResponseEntity<Usuario>(
 				_usuario, HttpStatus.OK);
