@@ -1,12 +1,13 @@
-package br.itb.projeto.pizzaria3a.service;
+package br.itb.projeto.KitFit.service;
 
 import java.util.List;
 import java.util.Optional;
 
 import org.springframework.stereotype.Service;
-import br.itb.projeto.pizzaria3a.model.entity.Produto;
-import br.itb.projeto.pizzaria3a.model.entity.Usuario;
-import br.itb.projeto.pizzaria3a.model.repository.ProdutoRepository;
+
+import br.itb.projeto.KitFit.model.entity.Produto;
+import br.itb.projeto.KitFit.model.entity.Usuario;
+import br.itb.projeto.KitFit.model.repository.ProdutoRepository;
 import jakarta.transaction.Transactional;
 
 @Service
@@ -52,5 +53,22 @@ public class ProdutoService {
 		}
 		return null;
 	}
+	
+
+	@Transactional
+	public Produto alterar(long id, Produto produto) {
+		
+		Optional<Produto> _produto = produtoRepository.findById(id);
+		
+		if (_produto.isPresent()) {
+			Produto produtoAtualizado = _produto.get();
+			
+			produtoAtualizado.setPreco(produto.getPreco());
+			
+			return produtoRepository.save(produtoAtualizado);
+		}
+		return null;
+	}
+	
 	
 }

@@ -1,12 +1,13 @@
-package br.itb.projeto.pizzaria3a.service;
+package br.itb.projeto.KitFit.service;
 
 import java.time.LocalDateTime;
 import java.util.Base64;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.stereotype.Service;
-import br.itb.projeto.pizzaria3a.model.entity.Usuario;
-import br.itb.projeto.pizzaria3a.model.repository.UsuarioRepository;
+
+import br.itb.projeto.KitFit.model.entity.Usuario;
+import br.itb.projeto.KitFit.model.repository.UsuarioRepository;
 import jakarta.transaction.Transactional;
 
 @Service
@@ -46,7 +47,9 @@ public class UsuarioService {
 	
 	public Usuario signin(String email, String senha) {
 		Usuario usuario = usuarioRepository.findByEmail(email);
-		if (usuario.getStatusUsuario().equals("ATIVO")) {
+		
+		if (usuario != null) {
+		if (!usuario.getStatusUsuario().equals("INATIVO")) {
 			byte[] decodedPass = Base64.getDecoder()
 					.decode(usuario.getSenha());
 			if (new String(decodedPass).equals(senha)) {
@@ -54,6 +57,7 @@ public class UsuarioService {
 			}
 			
 		}
+	}
 		return null;
 	}
 	
@@ -71,4 +75,46 @@ public class UsuarioService {
 		return null;
 		
 	}
+	@Transactional
+	public Usuario reativar(long id) {
+		
+		Optional<Usuario> _usuario = usuarioRepository.findById(id);
+		
+		if (_usuario.isPresent()) {
+			Usuario usuarioAtualizado = _usuario.get();
+			String senha = Base64.getEncoder()
+					.encodeToString("12345678".getBytes());
+			usuarioAtualizado.setSenha(senha);
+			
+			usuarioAtualizado .setDataCadastro(LocalDateTime.now());
+			usuarioAtualizado.setStatusUsuario("ATIVO");
+			
+			return usuarioRepository.save(usuarioAtualizado);
+		}
+		return null;
+		
+	}
+	
+	@Transactional
+	public Usuario alterarSenha(long id, Usuario usuario) {
+		
+		Optional<Usuario> _usuario = usuarioRepository.findById(id);
+		
+		if (_usuario.isPresent()) {
+			Usuario usuarioAtualizado = _usuario.get();
+			String senha = Base64.getEncoder()
+					.encodeToString(usuario.getSenha().getBytes());
+			usuarioAtualizado.setSenha(senha);
+			
+			usuarioAtualizado .setDataCadastro(LocalDateTime.now());
+			usuarioAtualizado.setStatusUsuario("ATIVO");
+			
+			return usuarioRepository.save(usuarioAtualizado);
+		}
+		return null;
+	}
 }
+
+
+
+

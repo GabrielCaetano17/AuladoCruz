@@ -1,4 +1,4 @@
-package br.itb.projeto.pizzaria3a.rest.controller;
+package br.itb.projeto.KitFit.rest.controller;
 
 import java.util.List;
 
@@ -12,8 +12,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import br.itb.projeto.pizzaria3a.model.entity.Usuario;
-import br.itb.projeto.pizzaria3a.service.UsuarioService;
+
+import br.itb.projeto.KitFit.model.entity.Usuario;
+import br.itb.projeto.KitFit.service.UsuarioService;
 
 @RestController
 @RequestMapping("/usuario")
@@ -48,7 +49,7 @@ public class UsuarioController {
 		return new ResponseEntity<Usuario>(_usuario, HttpStatus.OK);
 	}
 
-	@PostMapping
+	@PostMapping("signin")
 	public ResponseEntity<?> signin(
 			@RequestParam String email,
 			@RequestParam String senha) {
@@ -66,6 +67,25 @@ public class UsuarioController {
 	public ResponseEntity<Usuario> inativa(
 			@PathVariable long id) {
 		Usuario _usuario = usuarioService.inativa(id);
+		
+		return new ResponseEntity<Usuario>(
+				_usuario, HttpStatus.OK);
+	}
+	
+	@PutMapping("rativado/{id}")
+	public ResponseEntity<Usuario> reativar(
+			@PathVariable long id) {
+		Usuario _usuario = usuarioService.reativar(id);
+		
+		return new ResponseEntity<Usuario>(
+				_usuario, HttpStatus.OK);
+	}
+	
+	@PutMapping("alterarSenha/{id}")
+	public ResponseEntity<Usuario> alterarSenha(
+			@PathVariable long id,
+			@RequestBody Usuario usuario){
+		Usuario _usuario = usuarioService.alterarSenha(id, usuario);
 		
 		return new ResponseEntity<Usuario>(
 				_usuario, HttpStatus.OK);

@@ -98,7 +98,7 @@ public class UsuarioService {
 	public Usuario alterarSenha(long id, Usuario usuario) {
 		
 		Optional<Usuario> _usuario = usuarioRepository.findById(id);
-		
+		+
 		if (_usuario.isPresent()) {
 			Usuario usuarioAtualizado = _usuario.get();
 			String senha = Base64.getEncoder()
