@@ -17,6 +17,7 @@ public class Mensagem {
 	private long id;
 	private LocalDateTime dataMensagem;
 	private String emissorMensagem;
+	private String Nome;
 	private String email ;
 	private String telefone;
 	private String texto;
@@ -63,6 +64,12 @@ public class Mensagem {
 	}
 	public void setStatusMensagem(String statusMensagem) {
 		this.statusMensagem = statusMensagem;
+	}
+	public String getNome() {
+		return Nome;
+	}
+	public void setNome(String nome) {
+		Nome = nome;
 	}
 	
 	
