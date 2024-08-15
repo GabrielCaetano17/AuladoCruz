@@ -5,7 +5,6 @@ import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 import br.itb.projeto.pizzaria3a.model.entity.Produto;
-import br.itb.projeto.pizzaria3a.model.entity.Usuario;
 import br.itb.projeto.pizzaria3a.model.repository.ProdutoRepository;
 import jakarta.transaction.Transactional;
 
