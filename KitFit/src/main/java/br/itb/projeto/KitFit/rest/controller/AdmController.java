@@ -8,34 +8,43 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import br.itb.projeto.KitFit.model.entity.Adm;
 import br.itb.projeto.KitFit.service.AdmService;
 
 @RestController
 @RequestMapping("/Adm")
 public class AdmController {
-
+	
+	
 	private AdmService AdmService;
-
+	private Adm adm;
 	public AdmController(AdmService admService) {
 		super();
-		this.admService = admService;
+		this.AdmService = admService;
 	}
+	
 
 	@GetMapping("findAll")
 	public ResponseEntity<List<Adm>> findAll() {
-		List<Adm> adms = adm.findAll();
+		List<Adm> adms = null;
+		try {
+			adms = adm.findAll();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
 		return new ResponseEntity<List<Adm>>(adms, HttpStatus.OK);
 	}
+	
+	
 
 	@GetMapping("findById/{id}")
-	public ResponseEntity<Usuario> findById(@PathVariable long id) {
+	public ResponseEntity<Adm> findById(@PathVariable long id) {
 
-		Usuario usuario = usuarioService.findById(id);
+		//Adm adm = AdmService.findById(id);
 
-		return new ResponseEntity<Usuario>(usuario, HttpStatus.OK);
+		return new ResponseEntity<Adm>(adm, HttpStatus.OK);
 	}
-	
-	
 	
 }
