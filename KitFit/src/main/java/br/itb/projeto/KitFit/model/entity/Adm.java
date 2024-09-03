@@ -7,7 +7,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "Nome")
+@Table(name = "Adm")
 public class Adm {
 	
 	@Id
@@ -16,7 +16,6 @@ public class Adm {
 	private String nome;
 	private String email;
 	private String senha;
-	private int telefone;
 	
 	public long getId() {
 		return Id;
@@ -42,11 +41,4 @@ public class Adm {
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
-	public int getTelefone() {
-		return telefone;
-	}
-	public void setTelefone(int telefone) {
-		this.telefone = telefone;
-	}
-
 }
