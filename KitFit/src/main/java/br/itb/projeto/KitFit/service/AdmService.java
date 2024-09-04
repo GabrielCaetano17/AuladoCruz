@@ -20,14 +20,9 @@ public class AdmService {
 		}
 
 		public List<Adm> findAll() {
-			List<Adm> usuarios = admRepository.findAll();
+			List<Adm> adms = admRepository.findAll();
 			return adms;
 			
-		}
-
-		public Adm findById(long id) {
-			Adm adm = admRepository.findById(id).orElseThrow(null);
-			return adm;
 		}
 		
 		@Transactional
@@ -37,23 +32,23 @@ public class AdmService {
 			.encodeToString(adm.getSenha().getBytes());
 			adm.setSenha(senha);
 			
-			usuario.setDataCadastro(LocalDateTime.now());
-			usuario.setStatusUsuario("ATIVO");
+			adm.setDataCadastro(LocalDateTime.now());
+			adm.setStatusAdm("ATIVO");
 			
 			return admRepository.save(adm);
 		}
 	
 @Transactional
 	
-	public Usuario signin(String email, String senha) {
-		Usuario usuario = admRepository.findByEmail(email);
+	public Adm signin(String email, String senha) {
+		Adm adm= admRepository.findByEmail(email);
 		
-		if (usuario != null) {
-		if (!usuario.getStatusUsuario().equals("INATIVO")) {
+		if (adm != null) {
+		if (!adm.getStatusAdm().equals("INATIVO")) {
 			byte[] decodedPass = Base64.getDecoder()
-					.decode(usuario.getSenha());
+					.decode(adm.getSenha());
 			if (new String(decodedPass).equals(senha)) {
-				return usuario;
+				return adm;
 			}
 			
 		}

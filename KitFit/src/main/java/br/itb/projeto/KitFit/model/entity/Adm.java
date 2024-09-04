@@ -1,4 +1,6 @@
 package br.itb.projeto.KitFit.model.entity;
+import java.time.LocalDateTime;
+import java.util.List;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -16,6 +18,8 @@ public class Adm {
 	private String nome;
 	private String email;
 	private String senha;
+	private String StatusAdm;
+	
 	
 	public long getId() {
 		return Id;
@@ -40,5 +44,23 @@ public class Adm {
 	}
 	public void setSenha(String senha) {
 		this.senha = senha;
+	}
+	public String getStatusAdm() {
+		return StatusAdm;
+	}
+	public void setStatusAdm(String statusAdm) {
+		StatusAdm = statusAdm;
+	}
+	
+	
+	//Obs
+	public void setDataCadastro(LocalDateTime now) {
+		// TODO Auto-generated method stub
+	}
+	
+	
+	public List<Adm> findAll() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

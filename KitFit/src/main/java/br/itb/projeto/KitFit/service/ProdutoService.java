@@ -2,13 +2,12 @@ package br.itb.projeto.KitFit.service;
 
 import java.util.List;
 import java.util.Optional;
-
 import org.springframework.stereotype.Service;
-
 import br.itb.projeto.KitFit.model.entity.Produto;
-import br.itb.projeto.KitFit.model.entity.Usuario;
 import br.itb.projeto.KitFit.model.repository.ProdutoRepository;
 import jakarta.transaction.Transactional;
+
+
 
 @Service
 public class ProdutoService {

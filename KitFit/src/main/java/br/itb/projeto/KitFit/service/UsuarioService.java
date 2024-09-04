@@ -5,7 +5,6 @@ import java.util.Base64;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.stereotype.Service;
-
 import br.itb.projeto.KitFit.model.entity.Usuario;
 import br.itb.projeto.KitFit.model.repository.UsuarioRepository;
 import jakarta.transaction.Transactional;
@@ -113,6 +112,10 @@ public class UsuarioService {
 		}
 		return null;
 	}
+	
+	//Assinatura mensal de produto fzr ate 09 
+	
+	
 }
 
 
