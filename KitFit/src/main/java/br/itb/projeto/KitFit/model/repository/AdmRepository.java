@@ -34,7 +34,11 @@ public class AdmRepository {
 		return null;
 	}
 
+<<<<<<< HEAD
 		Object findById(long id) {
+=======
+	public Object findById(long id) {
+>>>>>>> 320ab0badb12f87bfce2ed550ebf3109c328a682
 		// TODO Auto-generated method stub
 		return null;
 	}

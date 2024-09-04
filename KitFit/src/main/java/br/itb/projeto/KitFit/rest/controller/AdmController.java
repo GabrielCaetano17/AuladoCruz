@@ -14,11 +14,18 @@ import br.itb.projeto.KitFit.service.AdmService;
 @RestController
 @RequestMapping("/Adm")
 public class AdmController {
+<<<<<<< HEAD
 	private AdmService AdmService;
 	private Adm adm;
 	
 	
 	
+=======
+	
+	
+	private AdmService AdmService;
+	private Adm adm;
+>>>>>>> 320ab0badb12f87bfce2ed550ebf3109c328a682
 	public AdmController(AdmService admService) {
 		super();
 		this.AdmService = admService;

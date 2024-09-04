@@ -53,14 +53,24 @@ public class Adm {
 	}
 	
 	
+<<<<<<< HEAD
 	//Obs
 	public void setDataCadastro(LocalDateTime now) {
 		// TODO Auto-generated method stub
 	}
 	
 	
+=======
+>>>>>>> 320ab0badb12f87bfce2ed550ebf3109c328a682
 	public List<Adm> findAll() {
 		// TODO Auto-generated method stub
 		return null;
 	}
+<<<<<<< HEAD
+=======
+	public void setDataCadastro(LocalDateTime now) {
+		// TODO Auto-generated method stub
+		
+	}
+>>>>>>> 320ab0badb12f87bfce2ed550ebf3109c328a682
 }
