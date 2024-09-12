@@ -19,7 +19,6 @@
     <fullyQualifiedTypeName name="br.itb.projeto.pizzaria3a.service.MensagemService"/>
     <fullyQualifiedTypeName name="org.springframework.stereotype.Repository"/>
     <fullyQualifiedTypeName name="br.itb.projeto.pizzaria3a.model.repository.UsuarioRepository"/>
-    <fullyQualifiedTypeName name="java.time.LocalDateTime"/>
     <fullyQualifiedTypeName name="br.itb.projeto.pizzaria3a.service.UsuarioService"/>
     <fullyQualifiedTypeName name="java.util.Base64"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestParam"/>
@@ -42,4 +41,8 @@
     <fullyQualifiedTypeName name="jakarta.persistence.Table"/>
     <fullyQualifiedTypeName name="jakarta.persistence.Id"/>
     <fullyQualifiedTypeName name="jakarta.persistence.GeneratedValue"/>
+    <fullyQualifiedTypeName name="java.time.LocalDateTime"/>
+    <fullyQualifiedTypeName name="br.itb.projeto.KitFit.model.repository.MensalidadeRepository"/>
+    <fullyQualifiedTypeName name="br.itb.projeto.KitFit.service.MensalidadeService"/>
+    <fullyQualifiedTypeName name="br.itb.projeto.KitFit.model.repository.KitRepository"/>
 </qualifiedTypeNameHistroy>

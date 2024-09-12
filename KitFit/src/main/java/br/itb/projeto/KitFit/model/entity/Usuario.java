@@ -19,7 +19,7 @@ public class Usuario {
 	private String email;
 	private String senha;
 	private String nivelAcesso;
-	private byte[] foto;
+	private byte[] foto; //NULL
 	private LocalDateTime dataCadastro;
 	private String statusUsuario;
 	
