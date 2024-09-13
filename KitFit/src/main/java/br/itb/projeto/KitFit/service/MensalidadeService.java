@@ -4,54 +4,72 @@ import java.util.Optional;
 
 import br.itb.projeto.KitFit.model.entity.Kit;
 import br.itb.projeto.KitFit.model.entity.Mensalidade;
+import br.itb.projeto.KitFit.model.entity.Usuario;
 import br.itb.projeto.KitFit.model.repository.MensalidadeRepository;
 import jakarta.transaction.Transactional;
 
 public class MensalidadeService {
-
-	public static Mensalidade inativa(long id) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	public static Mensalidade alterar(long id, Mensalidade mensalidade) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 	
-	/*@Transactional
+	private final MensalidadeRepository mensalidadeRepository;
+	
+	
+	
+	public MensalidadeService(MensalidadeRepository mensalidadeRepository) {
+		super();
+		this.mensalidadeRepository = mensalidadeRepository;
+	}
+
+	@Transactional
 	public Mensalidade inativa(long id) {
 		
-		Optional<Mensalidade> _mensalidade = MensalidadeRepository.findById(id);
+		Optional<Mensalidade> _mensalidade = mensalidadeRepository.findById(id);
 		
 		if (_mensalidade.isPresent()) {
 			Mensalidade mensalidadeAtualizado = _mensalidade.get();
-			MensalidadeAtualizado.setstatusMensalidade("INATIVA");
+			mensalidadeAtualizado.setStatusMensalidade("INATIVA");
 			
-			return MensalidadeRepository.save(mensalidadeAtualizado);
+			return mensalidadeRepository.save(mensalidadeAtualizado);
 		}
 		return null;
 	}
 
 	@Transactional
-	public Mensalidade alterar(long id,  Mensalidade, Mensalidade) {
+	public Mensalidade alterar(long id,  Mensalidade mensalidade) {
 		
-		Optional<Mensalidade> _produto = MensalidadeRepository.findById(id);
+		Optional<Mensalidade> _mensalidade = mensalidadeRepository.findById(id);
 		
-		if (_produto.isPresent()) {
-			Kit produtoAtualizado = _produto.get();
+		if (_mensalidade.isPresent()) {
+			Mensalidade mensalidadeAtualizado = _mensalidade.get();
 			
-			produtoAtualizado.setPreco(kit.getPreco());
+			mensalidadeAtualizado.setValor(mensalidadeAtualizado.getValor());
 			
-			return MensalidadeRepository.save(produtoAtualizado);
+			return mensalidadeRepository.save(mensalidadeAtualizado);
 		}
 		return null;
-	}*/
+	}
 	
+	@Transactional
+	public Mensalidade inativo(long id) {
+		
+		Optional<Mensalidade> _mensalidade = mensalidadeRepository.findById(id);
+		
+		if (_mensalidade.isPresent()) {
+			Mensalidade mensalidadeAtualizada = _mensalidade.get();
+			mensalidadeAtualizada.setStatusMensalidade("INATIVA");
+			
+			return mensalidadeRepository.save(mensalidadeAtualizada);
+		}
+		return null;
+		
+	}
 	
 	
 	// Olhar sobre a a mensalidade de ativar sobre ela, arrumar o controller
 	
 	
+	
 }
+
+
+	
+

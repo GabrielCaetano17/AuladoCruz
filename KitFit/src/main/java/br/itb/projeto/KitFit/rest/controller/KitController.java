@@ -17,7 +17,7 @@ import br.itb.projeto.KitFit.service.KitService;
 @RestController
 @RequestMapping("/kit/")
 public class KitController {
-	 private KitService kitService;
+	private KitService kitService;
 
 	public KitController(KitService kitService) {
 		super();

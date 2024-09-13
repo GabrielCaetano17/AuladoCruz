@@ -15,13 +15,13 @@ public class Usuario {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
-	private String nome;
-	private String email;
-	private String senha;
-	private String nivelAcesso;
-	private byte[] foto; //NULL
-	private LocalDateTime dataCadastro;
-	private String statusUsuario;
+	private 	String 			nome;
+	private 	String 			email;
+	private 	String 			senha;
+	private 	String 			nivelAcesso;
+	private 	byte[] 			foto; //NULL
+	private 	LocalDateTime 	dataCadastro;
+	private 	String 			statusUsuario;
 	
 	
 	public long getId() {

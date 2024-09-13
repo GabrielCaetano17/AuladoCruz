@@ -18,18 +18,23 @@ public class Kit {
 	
 	@ManyToOne
 	@JoinColumn(name = "categoria_id")
+	
+	
+	
+	private 	long 	id;
+	private 	String 	nome;
+	private 	String 	descricao;
+	private 	String 	produtos;
+	private 	byte[] 	foto; 
+	private 	String 	urlFoto;
+	private 	double 	preco;
+	private 	String 	StatusKit;
+	
+	
 	private Assinatura assinatura;
 	private String 	statusProd;
 	
 	
-	private long id;
-	private String nome;
-	private String descricao;
-	private String produtos;
-	private byte[] foto; 
-	private String urlFoto;
-	private double preco;
-	private String StatusKit;
 	
 	public String getProdutos() {
 		return produtos;

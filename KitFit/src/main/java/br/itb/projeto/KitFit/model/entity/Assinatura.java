@@ -1,5 +1,7 @@
 package br.itb.projeto.KitFit.model.entity;
 
+import java.time.LocalDateTime;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -12,21 +14,15 @@ public class Assinatura {
 	 @Id
 	  @GeneratedValue
 		(strategy = GenerationType.IDENTITY)
-	  private long id;
-	  private String nome;
-	  //private DateTime dataAssinatura;
-	  private String usuario_id;
-	  private String kit_id;
-	  private String statusAssinatura;
+	  private 		long 			id;
+	  private 		String 			nome;
+	  private 		LocalDateTime	dataAssinatura;
+	  private 		String 			usuario_id;
+	  private 		String 			kit_id;
+	  private 		String 			statusAssinatura;
 	  
 	  
-	  
-	//public DateTime getDataAssinatura() {
-		//return dataAssinatura;
-	//}
-	//public void setDataAssinatura(DateTime dataAssinatura) {
-		//this.dataAssinatura = dataAssinatura;
-	//}
+	
 	public String getUsuario_id() {
 		return usuario_id;
 	}
@@ -56,6 +52,12 @@ public class Assinatura {
 	}
 	public void setNome(String nome) {
 		this.nome = nome;
+	}
+	public LocalDateTime getDataAssinatura() {
+		return dataAssinatura;
+	}
+	public void setDataAssinatura(LocalDateTime dataAssinatura) {
+		this.dataAssinatura = dataAssinatura;
 	}
 		
 

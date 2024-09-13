@@ -9,20 +9,30 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.itb.projeto.KitFit.model.entity.Mensalidade;
+import br.itb.projeto.KitFit.model.repository.MensalidadeRepository;
+import br.itb.projeto.KitFit.service.MensagemService;
 import br.itb.projeto.KitFit.service.MensalidadeService;
 
 @RestController
 @RequestMapping("/Mensalidade/")
 public class MensalidadeController {
-
 	
+	private final MensalidadeService mensalidadeService;
+	
+	
+	
+
+	public MensalidadeController(MensalidadeService mensalidadeService) {
+		super();
+		this.mensalidadeService = mensalidadeService;
+	}
+
 	@PutMapping("inativa/{id}")
 	public ResponseEntity<Mensalidade> inativa(
 			@PathVariable long id) {
-		Mensalidade _produto = MensalidadeService.inativa(id);
+		Mensalidade mensalidade = mensalidadeService.inativa(id);
 		
-		return new ResponseEntity<Mensalidade>(
-				_produto, HttpStatus.OK);
+		return new ResponseEntity<Mensalidade>(mensalidade, HttpStatus.OK);
 	}
 	
 	@PutMapping("alterar/{id}")
@@ -30,9 +40,8 @@ public class MensalidadeController {
 			@PathVariable long id,
 			@RequestBody Mensalidade mensalidade) {
 		
-		Mensalidade _mensalidade = MensalidadeService.alterar(id, mensalidade);
+		Mensalidade _mensalidade = mensalidadeService.alterar(id, mensalidade);
 		
-		return new ResponseEntity<Mensalidade>(
-				_mensalidade, HttpStatus.OK);
+		return new ResponseEntity<Mensalidade>(_mensalidade, HttpStatus.OK);
 	}
 }

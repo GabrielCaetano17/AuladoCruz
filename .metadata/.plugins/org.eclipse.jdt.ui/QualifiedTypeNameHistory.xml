@@ -41,8 +41,8 @@
     <fullyQualifiedTypeName name="jakarta.persistence.Table"/>
     <fullyQualifiedTypeName name="jakarta.persistence.Id"/>
     <fullyQualifiedTypeName name="jakarta.persistence.GeneratedValue"/>
-    <fullyQualifiedTypeName name="java.time.LocalDateTime"/>
     <fullyQualifiedTypeName name="br.itb.projeto.KitFit.model.repository.MensalidadeRepository"/>
     <fullyQualifiedTypeName name="br.itb.projeto.KitFit.service.MensalidadeService"/>
     <fullyQualifiedTypeName name="br.itb.projeto.KitFit.model.repository.KitRepository"/>
+    <fullyQualifiedTypeName name="java.time.LocalDateTime"/>
 </qualifiedTypeNameHistroy>

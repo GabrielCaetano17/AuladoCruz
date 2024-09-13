@@ -14,7 +14,7 @@ import br.itb.projeto.KitFit.model.entity.Assinatura;
 import br.itb.projeto.KitFit.service.AssinaturaService;
 
 @RestController
-@RequestMapping("/categoria/")
+@RequestMapping("/kits/")
 public class AssinaturaController {
 
 	private AssinaturaService assinaturaService;

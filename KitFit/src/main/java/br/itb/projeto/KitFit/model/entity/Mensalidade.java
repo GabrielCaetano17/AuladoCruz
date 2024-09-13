@@ -6,6 +6,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 
@@ -16,16 +18,20 @@ public class Mensalidade {
 	 @Id
 	 @GeneratedValue
 	 			(strategy = GenerationType.IDENTITY)
-	  private long id;
-	  private String mesRef;
-	  private LocalDateTime dataVcto;
-	  private LocalDateTime dataPgto;
-	  private double valor;
-	  private int assinatura_id;
-	  private String statusMensalidade;
+	  private	long 			id;
+	  private 	String 			mesRef;
+	  private 	LocalDateTime 	dataVcto;
+	  private 	LocalDateTime 	dataPgto;
+	  private 	double 			valor;
+	  private 	String 			statusMensalidade;
+	  
+	  
+	  @OneToOne
+	  @JoinColumn(name = "assinatura_id")
+	  private Assinatura assinatura;
 
 	  
-		  public long getId() {
+		public long getId() {
 			return id;
 		}
 		public void setId(long id) {
@@ -56,12 +62,7 @@ public class Mensalidade {
 		public void setValor(double valor) {
 			this.valor = valor;
 		}
-		public int getAssinatura_id() {
-			return assinatura_id;
-		}
-		public void setAssinatura_id(int assinatura_id) {
-			this.assinatura_id = assinatura_id;
-		}
+		
 		public String getStatusMensalidade() {
 			return statusMensalidade;
 		}

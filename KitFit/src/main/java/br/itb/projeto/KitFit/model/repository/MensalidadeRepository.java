@@ -8,7 +8,8 @@ import br.itb.projeto.KitFit.model.entity.Mensalidade;
 
 public interface MensalidadeRepository 
 
-	
 				extends JpaRepository<Mensalidade, Long> {
 					
+	
+
 		}
