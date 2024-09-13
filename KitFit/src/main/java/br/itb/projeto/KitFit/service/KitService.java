@@ -32,9 +32,8 @@ public class KitService {
 	
 	@Transactional
 	public Kit create(Kit kit) {
-		
-		kit.setUrlFoto(null);
-		kit.setStatusProd("ATIVO");
+
+		kit.setStatusKit("ATIVO");
 		
 		return kitRepository.save(kit);
 	}
@@ -46,7 +45,7 @@ public class KitService {
 		
 		if (_produto.isPresent()) {
 			Kit produtoAtualizado = _produto.get();
-			produtoAtualizado.setStatusProd("INATIVA");
+			produtoAtualizado.setStatusKit("INATIVO");
 			
 			return kitRepository.save(produtoAtualizado);
 		}

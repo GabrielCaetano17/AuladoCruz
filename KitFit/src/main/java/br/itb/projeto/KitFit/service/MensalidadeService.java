@@ -2,18 +2,17 @@ package br.itb.projeto.KitFit.service;
 
 import java.util.Optional;
 
-import br.itb.projeto.KitFit.model.entity.Kit;
+import org.springframework.stereotype.Service;
+
 import br.itb.projeto.KitFit.model.entity.Mensalidade;
-import br.itb.projeto.KitFit.model.entity.Usuario;
 import br.itb.projeto.KitFit.model.repository.MensalidadeRepository;
 import jakarta.transaction.Transactional;
 
+@Service
 public class MensalidadeService {
 	
-	private final MensalidadeRepository mensalidadeRepository;
-	
-	
-	
+	private MensalidadeRepository mensalidadeRepository;
+
 	public MensalidadeService(MensalidadeRepository mensalidadeRepository) {
 		super();
 		this.mensalidadeRepository = mensalidadeRepository;
@@ -64,7 +63,7 @@ public class MensalidadeService {
 	}
 	
 	
-	// Olhar sobre a a mensalidade de ativar sobre ela, arrumar o controller
+
 	
 	
 	

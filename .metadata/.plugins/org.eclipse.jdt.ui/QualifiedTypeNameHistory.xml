@@ -4,7 +4,6 @@
     <fullyQualifiedTypeName name="br.itb.projeto.teste3a.service.AlunoService"/>
     <fullyQualifiedTypeName name="br.itb.projeto.teste3a.rest.controller.AlunoController"/>
     <fullyQualifiedTypeName name="org.springframework.data.jpa.repository.JpaRepository"/>
-    <fullyQualifiedTypeName name="org.springframework.stereotype.Service"/>
     <fullyQualifiedTypeName name="br.itb.projeto.pizzaria3a.model.repository.CategoriaRepository"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RestController"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestMapping"/>
@@ -14,7 +13,6 @@
     <fullyQualifiedTypeName name="br.itb.projeto.pizzaria3a.model.repository.MensagemRepository"/>
     <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="br.itb.projeto.pizzaria3a.model.entity.Categoria"/>
-    <fullyQualifiedTypeName name="jakarta.persistence.ManyToOne"/>
     <fullyQualifiedTypeName name="jakarta.persistence.JoinColumn"/>
     <fullyQualifiedTypeName name="br.itb.projeto.pizzaria3a.service.MensagemService"/>
     <fullyQualifiedTypeName name="org.springframework.stereotype.Repository"/>
@@ -46,4 +44,6 @@
     <fullyQualifiedTypeName name="br.itb.projeto.KitFit.model.repository.KitRepository"/>
     <fullyQualifiedTypeName name="java.time.LocalDateTime"/>
     <fullyQualifiedTypeName name="jakarta.persistence.OneToMany"/>
+    <fullyQualifiedTypeName name="jakarta.persistence.ManyToOne"/>
+    <fullyQualifiedTypeName name="org.springframework.stereotype.Service"/>
 </qualifiedTypeNameHistroy>

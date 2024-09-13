@@ -17,11 +17,8 @@ import br.itb.projeto.KitFit.service.MensalidadeService;
 @RequestMapping("/Mensalidade/")
 public class MensalidadeController {
 	
-	private final MensalidadeService mensalidadeService;
+	private MensalidadeService mensalidadeService;
 	
-	
-	
-
 	public MensalidadeController(MensalidadeService mensalidadeService) {
 		super();
 		this.mensalidadeService = mensalidadeService;
