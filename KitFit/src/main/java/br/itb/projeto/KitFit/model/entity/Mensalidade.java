@@ -27,8 +27,8 @@ public class Mensalidade {
 	  
 	  
 	  @OneToOne
-	  @JoinColumn(name = "assinatura_id")
-	  private Assinatura assinatura;
+	  @JoinColumn(name = "Mensalidade")
+	  private Mensalidade mensalidade;
 
 	  
 		public long getId() {

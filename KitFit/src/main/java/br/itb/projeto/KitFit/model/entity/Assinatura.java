@@ -6,6 +6,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -21,6 +23,9 @@ public class Assinatura {
 	  private 		String 			kit_id;
 	  private 		String 			statusAssinatura;
 	  
+	  @OneToMany
+	  @JoinColumn(name = "assinatura_id")
+	  private Assinatura assinatura;
 	  
 	
 	public String getUsuario_id() {

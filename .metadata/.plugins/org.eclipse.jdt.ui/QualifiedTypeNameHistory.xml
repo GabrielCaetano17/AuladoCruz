@@ -45,4 +45,5 @@
     <fullyQualifiedTypeName name="br.itb.projeto.KitFit.service.MensalidadeService"/>
     <fullyQualifiedTypeName name="br.itb.projeto.KitFit.model.repository.KitRepository"/>
     <fullyQualifiedTypeName name="java.time.LocalDateTime"/>
+    <fullyQualifiedTypeName name="jakarta.persistence.OneToMany"/>
 </qualifiedTypeNameHistroy>

@@ -18,7 +18,7 @@ public class Kit {
 	
 	@ManyToOne
 	@JoinColumn(name = "categoria_id")
-	
+
 	
 	
 	private 	long 	id;
