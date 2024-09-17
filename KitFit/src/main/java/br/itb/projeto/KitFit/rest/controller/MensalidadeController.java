@@ -7,10 +7,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
 import br.itb.projeto.KitFit.model.entity.Mensalidade;
-import br.itb.projeto.KitFit.model.repository.MensalidadeRepository;
-import br.itb.projeto.KitFit.service.MensagemService;
 import br.itb.projeto.KitFit.service.MensalidadeService;
 
 @RestController
