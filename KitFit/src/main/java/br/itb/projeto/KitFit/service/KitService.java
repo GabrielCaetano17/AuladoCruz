@@ -11,13 +11,16 @@ import jakarta.transaction.Transactional;
 
 @Service
 public class KitService {
+	
 
 	private KitRepository kitRepository;
-	
 	public KitService(KitRepository kitRepository) {
 		super();
 		this.kitRepository = kitRepository;
 	}
+	
+	
+	
 	public List<Kit> findAll() {
 		List<Kit> kits = kitRepository.findAll();
 		return kits;

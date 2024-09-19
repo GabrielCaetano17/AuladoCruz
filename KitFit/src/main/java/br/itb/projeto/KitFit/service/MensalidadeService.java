@@ -48,13 +48,13 @@ public class MensalidadeService {
 	}
 	
 	@Transactional
-	public Mensalidade inativo(long id) {
+	public Mensalidade ativo(long id) {
 		
 		Optional<Mensalidade> _mensalidade = mensalidadeRepository.findById(id);
 		
 		if (_mensalidade.isPresent()) {
 			Mensalidade mensalidadeAtualizada = _mensalidade.get();
-			mensalidadeAtualizada.setStatusMensalidade("INATIVA");
+			mensalidadeAtualizada.setStatusMensalidade("ATIVO");
 			
 			return mensalidadeRepository.save(mensalidadeAtualizada);
 		}
