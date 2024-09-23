@@ -1,6 +1,7 @@
 package br.itb.projeto.KitFit.model.entity;
 
 import java.time.LocalDateTime;
+import java.util.Optional;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -72,4 +73,5 @@ public class Usuario {
 	public void setStatusUsuario(String statusUsuario) {
 		this.statusUsuario = statusUsuario;
 	}
+	
 }

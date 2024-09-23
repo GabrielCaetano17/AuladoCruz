@@ -13,7 +13,8 @@ import jakarta.transaction.Transactional;
 public class UsuarioService {
 
 	private UsuarioRepository usuarioRepository;
-
+	
+	
 	public UsuarioService(UsuarioRepository usuarioRepository) {
 		super();
 		this.usuarioRepository = usuarioRepository;

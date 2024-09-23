@@ -27,17 +27,14 @@ public class KitService {
 	  }
 	
 	public Kit findById(long id) {
-		Kit kit = kitRepository
-				.findById(id).orElseThrow();
-		
+		Kit kit = kitRepository.findById(id).orElseThrow();
 		return kit;
 	}
 	
 	@Transactional
 	public Kit create(Kit kit) {
-
 		kit.setStatusKit("ATIVO");
-		
+	
 		return kitRepository.save(kit);
 	}
 	
@@ -49,7 +46,6 @@ public class KitService {
 		if (_produto.isPresent()) {
 			Kit produtoAtualizado = _produto.get();
 			produtoAtualizado.setStatusKit("INATIVO");
-			
 			return kitRepository.save(produtoAtualizado);
 		}
 		return null;
@@ -60,12 +56,9 @@ public class KitService {
 	public Kit alterar(long id, Kit kit) {
 		
 		Optional<Kit> _produto = kitRepository.findById(id);
-		
 		if (_produto.isPresent()) {
 			Kit produtoAtualizado = _produto.get();
-			
 			produtoAtualizado.setPreco(kit.getPreco());
-			
 			return kitRepository.save(produtoAtualizado);
 		}
 		return null;

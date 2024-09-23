@@ -2,6 +2,8 @@ package br.itb.projeto.KitFit.rest.controller;
 
 import java.util.List;
 
+
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,6 +21,7 @@ import br.itb.projeto.KitFit.service.UsuarioService;
 @RestController
 @RequestMapping("/usuario")
 public class UsuarioController {
+
 	private UsuarioService usuarioService;
 
 	public UsuarioController(UsuarioService usuarioService) {

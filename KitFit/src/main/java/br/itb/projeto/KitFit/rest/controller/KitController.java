@@ -43,17 +43,7 @@ public class KitController {
 			@RequestBody Kit kit) {
 		Kit _produto = kitService.create(kit);
 		
-		return new ResponseEntity<Kit>(
-				_produto, HttpStatus.OK);
-	}
-	
-	@PutMapping("inativa/{id}")
-	public ResponseEntity<Kit> inativa(
-			@PathVariable long id) {
-		Kit _produto = kitService.inativa(id);
-		
-		return new ResponseEntity<Kit>(
-				_produto, HttpStatus.OK);
+		return new ResponseEntity<Kit>(_produto, HttpStatus.OK);
 	}
 	
 	@PutMapping("alterar/{id}")
@@ -63,8 +53,15 @@ public class KitController {
 		
 		Kit _produto = kitService.alterar(id, kit);
 		
-		return new ResponseEntity<Kit>(
-				_produto, HttpStatus.OK);
+		return new ResponseEntity<Kit>(_produto, HttpStatus.OK);
+	}
+	
+	@PutMapping("inativa/{id}")
+	public ResponseEntity<Kit> inativa(
+			@PathVariable long id) {
+		Kit _produto = kitService.inativa(id);
+		
+		return new ResponseEntity<Kit>(_produto, HttpStatus.OK);
 	}
 	
 }

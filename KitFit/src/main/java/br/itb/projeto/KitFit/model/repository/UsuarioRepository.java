@@ -9,8 +9,7 @@ import br.itb.projeto.KitFit.model.entity.Usuario;
 public interface UsuarioRepository extends 
 						JpaRepository<Usuario, Long> {
 	
-	Usuario findByEmail(String emial);
-	
+	 Usuario findByEmail(String email);
 
 	
 }
