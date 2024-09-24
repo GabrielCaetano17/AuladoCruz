@@ -16,10 +16,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.itb.projeto.KitFit.model.entity.Usuario;
+import br.itb.projeto.KitFit.rest.exception.ResourceNotFoundException;
 import br.itb.projeto.KitFit.service.UsuarioService;
 
 @RestController
-@RequestMapping("/usuario")
+@RequestMapping("/usuario/")
 public class UsuarioController {
 
 	private UsuarioService usuarioService;
@@ -52,18 +53,19 @@ public class UsuarioController {
 		return new ResponseEntity<Usuario>(_usuario, HttpStatus.OK);
 	}
 
-	@PostMapping("signin")
-	public ResponseEntity<?> signin(
-			@RequestParam String email,
-			@RequestParam String senha) {
-			
-			Usuario usuario = usuarioService.signin(email, senha);
-			if(usuario != null) {
-		return ResponseEntity.ok().body(usuario);
+
+	@PostMapping("/signin")
+	public ResponseEntity<?> signin(@RequestBody Usuario usuario) {
+
+		Usuario _usuario = usuarioService
+				.signin(usuario.getEmail(), usuario.getSenha());
+
+		if (_usuario == null) {
+			throw new ResourceNotFoundException("*** Dados Incorretos! *** ");
+		}
+
+		return ResponseEntity.ok(_usuario);
 	}
-	return ResponseEntity.badRequest()
-			.body("Dados incorretos ");
-}
 	
 
 	@PutMapping("inativa/{id}")

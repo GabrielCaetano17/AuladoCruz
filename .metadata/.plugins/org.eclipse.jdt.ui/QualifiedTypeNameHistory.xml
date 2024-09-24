@@ -50,4 +50,5 @@
     <fullyQualifiedTypeName name="org.springframework.web.servlet.config.annotation.CorsRegistry"/>
     <fullyQualifiedTypeName name="org.springframework.context.annotation.Configuration"/>
     <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
+    <fullyQualifiedTypeName name="br.itb.projeto.KitFit.rest.exception.ResourceNotFoundException"/>
 </qualifiedTypeNameHistroy>

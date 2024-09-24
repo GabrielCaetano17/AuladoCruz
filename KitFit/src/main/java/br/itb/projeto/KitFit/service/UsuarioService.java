@@ -43,8 +43,8 @@ public class UsuarioService {
 		
 		return usuarioRepository.save(usuario);
 	}
-	@Transactional
 	
+	@Transactional
 	public Usuario signin(String email, String senha) {
 		Usuario usuario = usuarioRepository.findByEmail(email);
 		
