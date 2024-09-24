@@ -114,8 +114,6 @@ public class UsuarioService {
 		return null;
 	}
 	
-	//Assinatura mensal de produto fzr ate 09 
-	
 	
 }
 
