@@ -14,14 +14,16 @@ public class Mensagem {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long id;
-	private LocalDateTime dataMensagem;
-	private String emissorMensagem;
-	private String Nome;
-	private String email ;
-	private String telefone;
-	private String texto;
-	private String statusMensagem;
+	private 	long 			id;
+	private 	LocalDateTime 	dataMensagem;
+	private 	String 			emissorMensagem;
+	private 	String 			Nome;
+	private 	String 			email ;
+	private 	String 			telefone;
+	private 	String 			texto;
+	private 	String 			statusMensagem;
+	
+	
 	
 	public long getId() {
 		return id;

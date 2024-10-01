@@ -16,17 +16,19 @@ public class Mensalidade {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long id;
-	private String mesRef;
-	private LocalDateTime dataVcto;
-	private LocalDateTime dataPgto;
-	private double valor;
-	private String statusMensalidade;
+	private 	long 			id;
+	private 	String 			mesRef;
+	private 	LocalDateTime 	dataVcto;
+	private 	LocalDateTime 	dataPgto;
+	private 	double 			valor;
+	private 	String 			statusMensalidade;
 
 	@OneToOne
 	@JoinColumn(name = "assinatura_id")
-	private Assinatura assinatura;
+	private 	Assinatura 		assinatura;
 
+	
+	
 	public long getId() {
 		return id;
 	}

@@ -12,13 +12,15 @@ public class Kit {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long id;
-	private String nome;
-	private String descricao;
-	private String produtos;
-	private byte[] foto;
-	private double preco;
-	private String statusKit;
+	private 	long 	id;
+	private 	String 	nome;
+	private 	String 	descricao;
+	private 	String 	produtos;
+	private 	byte[] 	foto;
+	private 	double 	preco;
+	private 	String 	statusKit;
+	
+	
 	
 	public long getId() {
 		return id;

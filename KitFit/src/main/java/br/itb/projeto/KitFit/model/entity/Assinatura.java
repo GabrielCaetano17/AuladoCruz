@@ -15,11 +15,11 @@ import jakarta.persistence.Table;
 public class Assinatura {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long id;
-	private String nome;
-	private LocalDateTime dataAssinatura;
-	private String statusAssinatura;
-
+	private 	long 			id;
+	private 	String			nome;
+	private 	LocalDateTime 	dataAssinatura;
+	private 	String 			statusAssinatura;
+	
 	@ManyToOne
 	@JoinColumn(name = "usuario_id")
 	private Usuario usuario;
@@ -27,6 +27,8 @@ public class Assinatura {
 	@ManyToOne
 	@JoinColumn(name = "kit_id")
 	private Kit kit;
+	
+	
 
 	public long getId() {
 		return id;
