@@ -22,7 +22,7 @@ public class KitService {
 	
 	
 	public List<Kit> findAll() {
-		List<Kit> kits = kitRepository.findAll();
+		List<Kit> kits = kitRepository.findByStatusKit("ATIVO");
 		return kits;
 	  }
 	

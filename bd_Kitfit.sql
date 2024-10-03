@@ -10,14 +10,14 @@ GO
 
 CREATE TABLE Usuario
 ( 
-   id            INT			IDENTITY,
-   nome          VARCHAR(100)	NOT NULL,
-   email         VARCHAR(100)	UNIQUE NOT NULL,
-   senha         VARCHAR(100)	NOT NULL,
-   nivelAcesso   VARCHAR(10)    NULL, -- ADMIN ou CLIENTE
-   foto			 VARBINARY(MAX) NULL,
-   dataCadastro	 SMALLDATETIME	NOT NULL,
-   statusUsuario VARCHAR(20)    NOT NULL, -- ATIVO ou INATIVO ou TROCAR_SENHA
+   id				INT				IDENTITY,
+   nome				VARCHAR(100)	NOT NULL,
+   email			VARCHAR(100)	UNIQUE NOT NULL,
+   senha			VARCHAR(100)	NOT NULL,
+   nivelAcesso		VARCHAR(10)		NULL, -- ADMIN ou CLIENTE
+   foto				VARBINARY(MAX)	NULL,
+   dataCadastro		SMALLDATETIME	NOT NULL,
+   statusUsuario	VARCHAR(20)		NOT NULL, -- ATIVO ou INATIVO ou TROCAR_SENHA
 
    PRIMARY KEY (id)
 )
@@ -105,7 +105,7 @@ VALUES (GETDATE(), 'Maria Onete', 'maria@email.com', null, 'Segunda mensagem de 
 GO
 
 
-
+use bd_Kitfit
 SELECT * FROM Usuario
 SELECT * FROM Mensagem
 SELECT * FROM Kit
