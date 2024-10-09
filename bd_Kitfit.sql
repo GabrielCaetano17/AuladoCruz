@@ -25,7 +25,7 @@ GO
 INSERT Usuario (nome, email, senha, nivelAcesso, foto, dataCadastro, statusUsuario)
 VALUES ('Fulano da Silva', 'fulano@email.com.br', 'MTIzNDU2Nzg=', 'ADMIN', NULL, GETDATE(), 'ATIVO')
 INSERT Usuario (nome, email, senha, nivelAcesso, foto, dataCadastro, statusUsuario)
-VALUES ('Beltrana de Sá', 'beltrana@email.com.br', 'MTIzNDU2Nzg=', 'CLIENTE', NULL, GETDATE(), 'ATIVO')
+VALUES ('Beltrana de SÃ¡', 'beltrana@email.com.br', 'MTIzNDU2Nzg=', 'CLIENTE', NULL, GETDATE(), 'ATIVO')
 INSERT Usuario (nome, email, senha, nivelAcesso, foto, dataCadastro, statusUsuario)
 VALUES ('Sicrana de Oliveira', 'sicrana@email.com.br', 'MTIzNDU2Nzg=', 'CLIENTE', NULL, GETDATE(), 'ATIVO')
 INSERT Usuario (nome, email, senha, nivelAcesso, foto, dataCadastro, statusUsuario)
@@ -116,16 +116,6 @@ SELECT * FROM Mensalidade
 
 
 
---teste codigo mobile
-create table Codigo(
-NumeroAleatorio		int				identity, 
-assinatura_id		INT				NOT NULL,
-usuario_id			INT				NOT NULL,
-
-PRIMARY KEY (NumeroAleatorio),
-FOREIGN KEY (usuario_id) REFERENCES Usuario(id),
-FOREIGN KEY (assinatura_id) REFERENCES Assinatura(id)
-)
  
 
  
