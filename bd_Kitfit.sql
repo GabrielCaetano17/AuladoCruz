@@ -52,6 +52,7 @@ CREATE TABLE Assinatura
 (
 	id				 INT		    IDENTITY,
 	dataAssinatura	 SMALLDATETIME	NOT NULL,
+	codigo			 VARCHAR(10)		NULL,
 	usuario_id		 INT			NOT NULL,
 	kit_id			 INT			NOT NULL,
 	statusAssinatura VARCHAR(10)	NOT NULL, -- ATIVO ou INATIVO
@@ -61,8 +62,8 @@ CREATE TABLE Assinatura
 	FOREIGN KEY (kit_id) REFERENCES Kit(id)
 )
 GO
-INSERT Assinatura (dataAssinatura, usuario_id, kit_id, statusAssinatura)
-VALUES (GETDATE(), 2, 1, 'ATIVO')
+INSERT Assinatura (dataAssinatura, codigo, usuario_id, kit_id, statusAssinatura)
+VALUES (GETDATE(), NULL, 2, 1, 'ATIVO')
 
 CREATE TABLE Mensalidade
 (
@@ -111,6 +112,23 @@ SELECT * FROM Mensagem
 SELECT * FROM Kit
 SELECT * FROM Assinatura
 SELECT * FROM Mensalidade
+
+
+
+
+--teste codigo mobile
+create table Codigo(
+NumeroAleatorio		int				identity, 
+assinatura_id		INT				NOT NULL,
+usuario_id			INT				NOT NULL,
+
+PRIMARY KEY (NumeroAleatorio),
+FOREIGN KEY (usuario_id) REFERENCES Usuario(id),
+FOREIGN KEY (assinatura_id) REFERENCES Assinatura(id)
+)
+ 
+
+ 
 
 
 

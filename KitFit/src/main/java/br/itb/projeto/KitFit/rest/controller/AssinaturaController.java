@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.itb.projeto.KitFit.model.entity.Assinatura;
+import br.itb.projeto.KitFit.rest.response.MessageResponse;
 import br.itb.projeto.KitFit.service.AssinaturaService;
 
 @RestController
@@ -32,13 +33,18 @@ public class AssinaturaController {
 	}
 
 	@PostMapping("create")
-	public ResponseEntity<Assinatura> create(@RequestBody Assinatura assinatura) {
+	public ResponseEntity<?> create(@RequestBody Assinatura assinatura) {
 
-		Assinatura _categoria = 
+		Assinatura _assinatura = 
 				assinaturaService.create(assinatura);
+		
+		assinaturaService.gerarCodigo(_assinatura.getId());
+		
+		return ResponseEntity.ok()
+				.body(new MessageResponse(
+						"Assinatura cadastrado com sucesso!"));
 
-		return new ResponseEntity<Assinatura>
-					(_categoria, HttpStatus.OK);
+
 
 	}
 }

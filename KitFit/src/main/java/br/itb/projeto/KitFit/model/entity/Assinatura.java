@@ -16,7 +16,7 @@ public class Assinatura {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private 	long 			id;
-	private 	String			nome;
+	private 	String			codigo;
 	private 	LocalDateTime 	dataAssinatura;
 	private 	String 			statusAssinatura;
 	
@@ -27,8 +27,6 @@ public class Assinatura {
 	@ManyToOne
 	@JoinColumn(name = "kit_id")
 	private Kit kit;
-	
-	
 
 	public long getId() {
 		return id;
@@ -38,12 +36,12 @@ public class Assinatura {
 		this.id = id;
 	}
 
-	public String getNome() {
-		return nome;
+	public String getCodigo() {
+		return codigo;
 	}
 
-	public void setNome(String nome) {
-		this.nome = nome;
+	public void setCodigo(String codigo) {
+		this.codigo = codigo;
 	}
 
 	public LocalDateTime getDataAssinatura() {
@@ -77,5 +75,7 @@ public class Assinatura {
 	public void setKit(Kit kit) {
 		this.kit = kit;
 	}
+	
+	
 
 }

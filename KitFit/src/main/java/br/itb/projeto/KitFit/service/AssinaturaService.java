@@ -1,6 +1,7 @@
 package br.itb.projeto.KitFit.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
@@ -29,6 +30,27 @@ public class AssinaturaService {
 		
 		return assinaturaRepository.save(assinatura);
 	}
+	
+	@Transactional
+	public Assinatura gerarCodigo(long id) {
+		Optional<Assinatura> _assinatura = 
+				assinaturaRepository.findById(id);
+		
+		if (_assinatura.isPresent()) {
+			
+			Assinatura assAtualizado = _assinatura.get();
+			String codigo = "K" +
+					assAtualizado.getId() + "I" +
+					assAtualizado.getUsuario().getId() + "T" +
+					assAtualizado.getKit().getId();
+			
+			assAtualizado.setCodigo(codigo);
+			
+			return assinaturaRepository.save(assAtualizado);
+		}
+		return null;
+	}
+	
 }
 
 
