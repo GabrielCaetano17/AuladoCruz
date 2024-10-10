@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import br.itb.projeto.KitFit.model.entity.Usuario;
 import br.itb.projeto.KitFit.rest.exception.ResourceNotFoundException;
+import br.itb.projeto.KitFit.rest.response.MessageResponse;
 import br.itb.projeto.KitFit.service.UsuarioService;
 
 @RestController
@@ -52,6 +53,18 @@ public class UsuarioController {
 
 		return new ResponseEntity<Usuario>(_usuario, HttpStatus.OK);
 	}
+
+	@PutMapping("alterar/{id}")
+
+	public ResponseEntity<?> alterar(@PathVariable long id, @RequestBody Usuario usuario) {
+ 
+		Usuario _usuario = usuarioService.alterar(id, usuario);
+ 
+		return ResponseEntity.ok()
+
+				.body(new MessageResponse("Usuário: " + _usuario.getEmail() + " alterado com sucesso!"));
+	}
+
 
 
 	@PostMapping("/signin")

@@ -50,6 +50,6 @@
     <fullyQualifiedTypeName name="org.springframework.context.annotation.Configuration"/>
     <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
     <fullyQualifiedTypeName name="br.itb.projeto.KitFit.rest.exception.ResourceNotFoundException"/>
-    <fullyQualifiedTypeName name="br.itb.projeto.KitFit.rest.response.MessageResponse"/>
     <fullyQualifiedTypeName name="java.util.Optional"/>
+    <fullyQualifiedTypeName name="br.itb.projeto.KitFit.rest.response.MessageResponse"/>
 </qualifiedTypeNameHistroy>
