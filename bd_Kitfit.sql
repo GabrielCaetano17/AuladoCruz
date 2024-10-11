@@ -8,8 +8,7 @@ GO
 USE bd_Kitfit
 GO
 
-CREATE TABLE Usuario
-( 
+CREATE TABLE Usuario( 
    id				INT				IDENTITY,
    nome				VARCHAR(100)	NOT NULL,
    email			VARCHAR(100)	UNIQUE NOT NULL,
@@ -18,12 +17,23 @@ CREATE TABLE Usuario
    foto				VARBINARY(MAX)	NULL,
    dataCadastro		SMALLDATETIME	NOT NULL,
    statusUsuario	VARCHAR(20)		NOT NULL, -- ATIVO ou INATIVO ou TROCAR_SENHA
+   codigogerado		VARCHAR(10)     NOT NULL,
 
    PRIMARY KEY (id)
+  -- UPDATE Usuario SET codigogerado = (ABS(CHECKSUM(NEWID())) % 10) + 1  gerar codigo
+  --UPDATE Usuario SET codigogerado = (SELECT CRYPT_GEN_RANDOM(4, 0x25F18060)) where id = 1;  atualizar a assinatura com novo codigo
+  --UPDATE Usuario SET codigogerado = SELECT CRYPT_GEN_RANDOM(4, 0x25F18060)  user assnidado novo
 )
+
+
+select *FROM Usuario
+
+
+
 GO
-INSERT Usuario (nome, email, senha, nivelAcesso, foto, dataCadastro, statusUsuario)
-VALUES ('Fulano da Silva', 'fulano@email.com.br', 'MTIzNDU2Nzg=', 'ADMIN', NULL, GETDATE(), 'ATIVO')
+INSERT Usuario (nome, email, senha, nivelAcesso, foto, dataCadastro, statusUsuario, codigogerado)
+VALUES ('Fulano da Silva', 'fulano@email.com.br', 'MTIzNDU2Nzg=', 'ADMIN', NULL, GETDATE(), 'ATIVO',
+'0x07863804')
 INSERT Usuario (nome, email, senha, nivelAcesso, foto, dataCadastro, statusUsuario)
 VALUES ('Beltrana de Sá', 'beltrana@email.com.br', 'MTIzNDU2Nzg=', 'CLIENTE', NULL, GETDATE(), 'ATIVO')
 INSERT Usuario (nome, email, senha, nivelAcesso, foto, dataCadastro, statusUsuario)

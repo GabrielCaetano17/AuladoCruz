@@ -31,6 +31,12 @@ public class UsuarioService {
 		return usuario;
 	}
 	
+	public Usuario findBycodigogerado(long codigogerado) {
+		Usuario usuario = usuarioRepository.findById(codigogerado).orElseThrow(null);
+		return usuario;
+	}
+	
+	
 	@Transactional
 	public Usuario create(Usuario usuario) {
 		
