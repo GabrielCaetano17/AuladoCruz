@@ -1,10 +1,9 @@
 package br.itb.projeto.KitFit.service;
 
+
 import java.util.List;
 import java.util.Optional;
-
 import org.springframework.stereotype.Service;
-
 import br.itb.projeto.KitFit.model.entity.Assinatura;
 import br.itb.projeto.KitFit.model.repository.AssinaturaRepository;
 import jakarta.transaction.Transactional;
@@ -23,6 +22,13 @@ public class AssinaturaService {
 		List<Assinatura> assinaturas = assinaturaRepository.findAll();
 		return assinaturas;
 	}
+	
+	public Assinatura findById(long id) {
+		Assinatura assinatura = assinaturaRepository.findById(id).orElseThrow();
+		return assinatura;
+	}
+	
+
 	
 	//jakarta.transaction.Transactional
 	@Transactional
@@ -51,7 +57,23 @@ public class AssinaturaService {
 		return null;
 	}
 	
-}
+	@Transactional
+	public Assinatura inativa(long id) {
+		
+		Optional<Assinatura> _assinatura = assinaturaRepository.findById(id);
+		
+		if (_assinatura.isPresent()) {
+			Assinatura assinaturaAtualizada = _assinatura.get();
+			assinaturaAtualizada.setStatusAssinatura("INATIVA");
+			
+			return assinaturaRepository.save(assinaturaAtualizada);
+		}
+		return null;
+		
+	}
+	
+}	
+
 
 
 
