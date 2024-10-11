@@ -61,4 +61,9 @@ public class AssinaturaController {
 				_assinatura, HttpStatus.OK);
 	}
 	
+//	@PostMapping("/generate-code")
+//    public ResponseEntity<Assinatura> generateCode(@RequestBody CodeRequest request) {
+//        String code = assinaturaService();
+//        return ResponseEntity.ok(code);
+//    }
 }

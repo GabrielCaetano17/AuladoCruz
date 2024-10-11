@@ -57,6 +57,14 @@ public class AssinaturaService {
 		return null;
 	}
 	
+
+	
+	
+	
+	
+	
+	
+	
 	@Transactional
 	public Assinatura inativa(long id) {
 		
