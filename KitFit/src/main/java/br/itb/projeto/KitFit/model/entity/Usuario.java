@@ -21,9 +21,7 @@ public class Usuario {
 	private 	byte[] 			foto; //NULL
 	private 	LocalDateTime 	dataCadastro;
 	private 	String 			statusUsuario;
-	private 	String   codigogerado;
-	
-	
+
 	public long getId() {
 		return id;
 	}
@@ -72,10 +70,5 @@ public class Usuario {
 	public void setStatusUsuario(String statusUsuario) {
 		this.statusUsuario = statusUsuario;
 	}
-	public String getCodigogerado() {
-		return codigogerado;
-	}
-	public void setCodigogerado(String codigogerado) {
-		this.codigogerado = codigogerado;
-	}
+
 }

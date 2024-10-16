@@ -43,40 +43,6 @@ public class UsuarioService {
 		return usuario;
 	}
 	
-	
-	
-
-	@Transactional
-	public Usuario update(long id, Usuario usuario) {
-		// Verifica se o usuário existe no banco de dados
-		Optional<Usuario> _usuario = usuarioRepository.findById(id);
-
-		System.out.println("Aqui " + usuario.getNome());
-		if (_usuario.isPresent()) {
-			Usuario usuarioAtualizado = _usuario.get();
-
-			usuarioAtualizado.setNome(usuario.getNome());
-			
-			usuarioAtualizado.setEmail(usuario.getEmail());
-
-			usuarioAtualizado.setSenha(usuario.getSenha());
-
-			//String senha = Base64.getEncoder().encodeToString(usuario.getSenha().getBytes());
-			
-			//usuarioAtualizado.setSenha(senha);
-
-			// Atualiza o usuário no banco de dados
-			return usuarioRepository.save(usuarioAtualizado);
-		}
-
-		// Se o usuário não for encontrado, retorna null ou lança uma exceção
-		return null;
-	}
-	
-	
-	
-	
-	
 	@Transactional
 	public Usuario create(Usuario usuario) {
 		
@@ -105,22 +71,39 @@ public class UsuarioService {
 		}
 	}
 		return null;
-	}
+}
+	
 	
 	@Transactional
 	public Usuario alterar(long id, Usuario usuario) {
  
 		Optional<Usuario> _usuario = usuarioRepository.findById(id);
  
+		System.out.println("Aqui " + usuario.getNome());
 		if (_usuario.isPresent()) {
 			Usuario usuarioAtualizado = _usuario.get();
- 
+
 			usuarioAtualizado.setNome(usuario.getNome());
 			
+			usuarioAtualizado.setEmail(usuario.getEmail());
+
+			//String senha = Base64.getEncoder().encodeToString(usuario.getSenha().getBytes());
+			
+			//usuarioAtualizado.setSenha(senha);
+
+			// Atualiza o usuário no banco de dados
 			return usuarioRepository.save(usuarioAtualizado);
 		}
+
+		// Se o usuário não for encontrado, retorna null ou lança uma exceção
 		return null;
 	}
+	
+	
+	
+	
+	
+	
 	
 	@Transactional
 	public Usuario inativa(long id) {
@@ -174,7 +157,7 @@ public class UsuarioService {
 		}
 		return null;
 	}
-	
+
 	
 }
 

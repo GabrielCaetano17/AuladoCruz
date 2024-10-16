@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import br.itb.projeto.KitFit.model.entity.Usuario;
 import br.itb.projeto.KitFit.rest.exception.ResourceNotFoundException;
@@ -41,22 +40,6 @@ public class UsuarioController {
 
 		return new ResponseEntity<Usuario>(usuario, HttpStatus.OK);
 	}
-	
-	
-	
-	
-	@GetMapping("findByEmail")
-	public ResponseEntity<Usuario> findByEmail(@RequestParam String email) {
-		
-		Usuario usuario = usuarioService.findByEmail(email);
-		
-		return new ResponseEntity<Usuario>(usuario, HttpStatus.OK);
-	}
-	
-	
-	
-	
-	
 	
 
 	@PostMapping("create")
@@ -112,6 +95,10 @@ public class UsuarioController {
 				_usuario, HttpStatus.OK);
 	}
 	
+
+	
+	
+	
 	@PutMapping("alterarSenha/{id}")
 	public ResponseEntity<Usuario> alterarSenha(
 			@PathVariable long id,
@@ -122,4 +109,5 @@ public class UsuarioController {
 				_usuario, HttpStatus.OK);
 	}
 
+	
 }
