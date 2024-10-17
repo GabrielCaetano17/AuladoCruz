@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import br.itb.projeto.KitFit.model.entity.Kit;
+import br.itb.projeto.KitFit.model.entity.Usuario;
+import br.itb.projeto.KitFit.rest.response.MessageResponse;
 import br.itb.projeto.KitFit.service.KitService;
 
 @RestController
@@ -46,12 +48,15 @@ public class KitController {
 	}
 
 	@PutMapping("alterar/{id}")
-	public ResponseEntity<Kit> alterar(@PathVariable long id, @RequestBody Kit kit) {
+	public ResponseEntity<?> alterar(@PathVariable long id, @RequestBody Kit kit) {
 
 		Kit _produto = kitService.alterar(id, kit);
 
-		return new ResponseEntity<Kit>(_produto, HttpStatus.OK);
+		 return ResponseEntity.ok()
+
+			.body(new MessageResponse("Kit: " + _produto.getNome() + " alterado com sucesso!"));
 	}
+
 
 	@PutMapping("inativa/{id}")
 	public ResponseEntity<Kit> inativa(@PathVariable long id) {

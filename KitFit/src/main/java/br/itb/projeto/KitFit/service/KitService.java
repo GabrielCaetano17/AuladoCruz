@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 import org.springframework.stereotype.Service;
 import br.itb.projeto.KitFit.model.entity.Kit;
+import br.itb.projeto.KitFit.model.entity.Usuario;
 import br.itb.projeto.KitFit.model.repository.KitRepository;
 import jakarta.transaction.Transactional;
 
@@ -54,13 +55,37 @@ public class KitService {
 
 	@Transactional
 	public Kit alterar(long id, Kit kit) {
-		
-		Optional<Kit> _produto = kitRepository.findById(id);
-		if (_produto.isPresent()) {
-			Kit produtoAtualizado = _produto.get();
-			produtoAtualizado.setPreco(kit.getPreco());
-			return kitRepository.save(produtoAtualizado);
+ 
+		Optional<Kit> _kit = kitRepository.findById(id);
+ 
+		System.out.println("Aqui " + kit.getNome());
+		if (_kit.isPresent()) {
+			Kit kitAtualizado = _kit.get();
+
+			kitAtualizado.setNome(kit.getNome());
+			kitAtualizado.setDescricao(kit.getDescricao());
+			kitAtualizado.setProdutos(kit.getProdutos());
+			kitAtualizado.setPreco(kit.getPreco());
+			kitAtualizado.setStatusKit(kit.getStatusKit());
+			
+
+		//	private 	long 	id;
+			//private 	String 	nome;
+			//private 	String 	descricao;
+			//private 	String 	produtos;
+			//private 	byte[] 	foto;
+		//	private 	double 	preco;
+		//	private 	String 	statusKit;
+			
+			//String senha = Base64.getEncoder().encodeToString(usuario.getSenha().getBytes());
+			
+			//usuarioAtualizado.setSenha(senha);
+
+			// Atualiza o usuário no banco de dados
+			return kitRepository.save(kitAtualizado);
 		}
+
+		// Se o usuário não for encontrado, retorna null ou lança uma exceção
 		return null;
 	}
 	
