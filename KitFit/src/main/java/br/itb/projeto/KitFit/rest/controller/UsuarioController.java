@@ -62,7 +62,6 @@ public class UsuarioController {
 	}
 
 
-
 	@PostMapping("/signin")
 	public ResponseEntity<?> signin(@RequestBody Usuario usuario) {
 
