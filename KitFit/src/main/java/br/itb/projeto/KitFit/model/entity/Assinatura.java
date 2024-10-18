@@ -16,8 +16,8 @@ public class Assinatura {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private 	long 			id;
-	private 	String			codigo;
 	private 	LocalDateTime 	dataAssinatura;
+	private 	String			codigo;
 	private 	String 			statusAssinatura;
 	
 	@ManyToOne
