@@ -34,6 +34,8 @@ INSERT Usuario (nome, email, senha, nivelAcesso, foto, dataCadastro, statusUsuar
 VALUES ('Sicrana de Oliveira', 'sicrana@email.com.br', 'MTIzNDU2Nzg=', 'CLIENTE', NULL, GETDATE(), 'ATIVO')
 INSERT Usuario (nome, email, senha, nivelAcesso, foto, dataCadastro, statusUsuario)
 VALUES ('Ordnael Zurc', 'ordnael@email.com.br', 'MTIzNDU2Nzg=', 'CLIENTE', NULL, GETDATE(), 'TROCAR_SENHA')
+INSERT Usuario (nome, email, senha, nivelAcesso, foto, dataCadastro, statusUsuario)
+VALUES ('calleri', 'calleri@email.com.br', 'MTIzNDU2Nzg=', 'ADMIN', NULL, GETDATE(), 'ATIVO')
 GO
 
 CREATE TABLE Kit

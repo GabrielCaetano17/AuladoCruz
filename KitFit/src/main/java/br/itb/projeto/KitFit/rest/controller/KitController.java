@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import br.itb.projeto.KitFit.model.entity.Kit;
-import br.itb.projeto.KitFit.model.entity.Usuario;
 import br.itb.projeto.KitFit.rest.response.MessageResponse;
 import br.itb.projeto.KitFit.service.KitService;
 

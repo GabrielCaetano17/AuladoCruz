@@ -15,7 +15,7 @@ import br.itb.projeto.KitFit.rest.response.MessageResponse;
 import br.itb.projeto.KitFit.service.AssinaturaService;
 
 @RestController
-@RequestMapping("/kit/")
+@RequestMapping("/assinatura/")
 public class AssinaturaController {
 
 	private AssinaturaService assinaturaService;

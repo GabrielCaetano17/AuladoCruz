@@ -4,7 +4,6 @@ import java.util.List;
 import java.util.Optional;
 import org.springframework.stereotype.Service;
 import br.itb.projeto.KitFit.model.entity.Kit;
-import br.itb.projeto.KitFit.model.entity.Usuario;
 import br.itb.projeto.KitFit.model.repository.KitRepository;
 import jakarta.transaction.Transactional;
 
