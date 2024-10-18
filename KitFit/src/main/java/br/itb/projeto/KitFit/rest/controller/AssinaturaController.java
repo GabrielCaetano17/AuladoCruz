@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import br.itb.projeto.KitFit.model.entity.Assinatura;
+import br.itb.projeto.KitFit.model.entity.Usuario;
 import br.itb.projeto.KitFit.rest.response.MessageResponse;
 import br.itb.projeto.KitFit.service.AssinaturaService;
 
@@ -66,4 +67,11 @@ public class AssinaturaController {
 //        String code = assinaturaService();
 //        return ResponseEntity.ok(code);
 //    }
+	
+	@GetMapping("/buscarAssinaturaUsuario/{id}")
+	public ResponseEntity<Assinatura> buscarAssinaturaUsuario(@PathVariable Long id){
+		Assinatura _assinatura = assinaturaService.buscarAssinatura(id);
+		
+		return new ResponseEntity<Assinatura>(_assinatura, HttpStatus.OK);
+	}
 }

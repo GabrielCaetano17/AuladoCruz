@@ -21,16 +21,13 @@
     <fullyQualifiedTypeName name="java.util.Base64"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestParam"/>
     <fullyQualifiedTypeName name="org.springframework.web.client.HttpClientErrorException.BadRequest"/>
-    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.GetMapping"/>
     <fullyQualifiedTypeName name="br.itb.projeto.pizzaria3a.service.ProdutoService"/>
     <fullyQualifiedTypeName name="br.itb.projeto.pizzaria3a.model.repository.ProdutoRepository"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PostMapping"/>
-    <fullyQualifiedTypeName name="org.springframework.http.HttpStatus"/>
     <fullyQualifiedTypeName name="jakarta.transaction.Transactional"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PutMapping"/>
     <fullyQualifiedTypeName name="br.itb.projeto.pizzaria3a.model.entity.Mensagem"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PathVariable"/>
-    <fullyQualifiedTypeName name="org.springframework.http.ResponseEntity"/>
     <fullyQualifiedTypeName name="br.itb.projeto.pizzaria3a.model.entity.Usuario"/>
     <fullyQualifiedTypeName name="br.itb.projeto.pizzaria3a.model.entity.Produto"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestBody"/>
@@ -50,6 +47,12 @@
     <fullyQualifiedTypeName name="org.springframework.context.annotation.Configuration"/>
     <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
     <fullyQualifiedTypeName name="br.itb.projeto.KitFit.rest.exception.ResourceNotFoundException"/>
-    <fullyQualifiedTypeName name="java.util.Optional"/>
     <fullyQualifiedTypeName name="br.itb.projeto.KitFit.rest.response.MessageResponse"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.GetMapping"/>
+    <fullyQualifiedTypeName name="org.springframework.http.ResponseEntity"/>
+    <fullyQualifiedTypeName name="org.springframework.http.HttpStatus"/>
+    <fullyQualifiedTypeName name="br.itb.projeto.KitFit.model.entity.Usuario"/>
+    <fullyQualifiedTypeName name="br.itb.projeto.KitFit.model.repository.UsuarioRepository"/>
+    <fullyQualifiedTypeName name="java.util.Optional"/>
+    <fullyQualifiedTypeName name="br.itb.projeto.KitFit.model.entity.Assinatura"/>
 </qualifiedTypeNameHistroy>

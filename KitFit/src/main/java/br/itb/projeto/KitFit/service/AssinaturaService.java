@@ -5,19 +5,25 @@ import java.util.List;
 import java.util.Optional;
 import org.springframework.stereotype.Service;
 import br.itb.projeto.KitFit.model.entity.Assinatura;
+import br.itb.projeto.KitFit.model.entity.Usuario;
 import br.itb.projeto.KitFit.model.repository.AssinaturaRepository;
+import br.itb.projeto.KitFit.model.repository.UsuarioRepository;
 import jakarta.transaction.Transactional;
 
 @Service
 public class AssinaturaService {
 
 	private AssinaturaRepository assinaturaRepository;
+	
+	private UsuarioRepository usuarioRepository;
 
-	public AssinaturaService(AssinaturaRepository assinaturaRepository) {
+	
+	public AssinaturaService(AssinaturaRepository assinaturaRepository, UsuarioRepository usuarioRepository) {
 		super();
 		this.assinaturaRepository = assinaturaRepository;
+		this.usuarioRepository = usuarioRepository;
 	}
-	
+
 	public List<Assinatura> findAll(){
 		List<Assinatura> assinaturas = assinaturaRepository.findAll();
 		return assinaturas;
@@ -78,6 +84,13 @@ public class AssinaturaService {
 		}
 		return null;
 		
+	}
+
+	public Assinatura buscarAssinatura(Long id) {
+		Usuario usuario = usuarioRepository.findAllById(id);
+		Assinatura assinatura = assinaturaRepository.findByUsuario(usuario);
+		
+		return assinatura;
 	}
 	
 }	
