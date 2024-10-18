@@ -62,13 +62,13 @@ public class AssinaturaController {
 				_assinatura, HttpStatus.OK);
 	}
 	
-//	@PostMapping("/generate-code")
+//	@PostMapping("/generate-code") 
 //    public ResponseEntity<Assinatura> generateCode(@RequestBody CodeRequest request) {
 //        String code = assinaturaService();
 //        return ResponseEntity.ok(code);
 //    }
 	
-	@GetMapping("/buscarAssinaturaUsuario/{id}")
+	@GetMapping("buscarAssinaturaUsuario/{id}")
 	public ResponseEntity<Assinatura> buscarAssinaturaUsuario(@PathVariable Long id){
 		Assinatura _assinatura = assinaturaService.buscarAssinatura(id);
 		

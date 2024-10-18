@@ -21,7 +21,7 @@ public class UsuarioService {
 	}
 
 	public List<Usuario> findAll() {
-		List<Usuario> usuarios = usuarioRepository.findAll();
+		List<Usuario> usuarios = usuarioRepository.findByStatusUsuario("ATIVO");
 		return usuarios;
 		
 	}
