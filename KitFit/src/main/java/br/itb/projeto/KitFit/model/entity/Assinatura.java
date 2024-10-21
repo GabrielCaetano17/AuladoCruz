@@ -19,14 +19,24 @@ public class Assinatura {
 	private 	LocalDateTime 	dataAssinatura;
 	private 	String			codigo;
 	private 	String 			statusAssinatura;
+	private     float         	valor;   
 	
 	@ManyToOne
-	@JoinColumn(name = "usuario_id")
+	@JoinColumn(name = "emailUsu")
 	private Usuario usuario;
 
 	@ManyToOne
 	@JoinColumn(name = "kit_id")
+	
 	private Kit kit;
+
+	public float getValor() {
+		return valor;
+	}
+
+	public void setValor(float valor) {
+		this.valor = valor;
+	}
 
 	public long getId() {
 		return id;

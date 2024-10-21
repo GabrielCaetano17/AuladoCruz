@@ -67,9 +67,9 @@ public class AssinaturaController {
 //        return ResponseEntity.ok(code);
 //    }
 	
-	@GetMapping("buscarAssinaturaUsuario/{id}")
-	public ResponseEntity<Assinatura> buscarAssinaturaUsuario(@PathVariable Long id){
-		Assinatura _assinatura = assinaturaService.buscarAssinatura(id);
+	@GetMapping("buscarAssinaturaUsuario/{emailUsu}")
+	public ResponseEntity<Assinatura> buscarAssinaturaUsuario(@PathVariable long emailUsu){
+		Assinatura _assinatura = assinaturaService.buscarAssinatura(emailUsu);
 		
 		return new ResponseEntity<Assinatura>(_assinatura, HttpStatus.OK);
 	}
