@@ -249,7 +249,11 @@ END
 
 !ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2024-10-18 18:31:18.421
 !MESSAGE Started org.springframework.tooling.boot.ls LS process 10212
+<<<<<<< HEAD
 !SESSION 2024-10-21 16:32:00.107 -----------------------------------------------
+=======
+!SESSION 2024-10-21 16:36:16.356 -----------------------------------------------
+>>>>>>> 91ca76f1f17ef66c51a73bb9356f03ccbfb52973
 eclipse.buildId=4.16.1.202210240748
 java.version=17.0.4.1
 java.vendor=Eclipse Adoptium
@@ -257,9 +261,15 @@ BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=pt_BR
 Framework arguments:  -product org.springframework.boot.ide.branding.sts4
 Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.springframework.boot.ide.branding.sts4
 
+<<<<<<< HEAD
 !ENTRY org.eclipse.jface 2 0 2024-10-21 16:33:40.531
 !MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
 !SUBENTRY 1 org.eclipse.jface 2 0 2024-10-21 16:33:40.531
+=======
+!ENTRY org.eclipse.jface 2 0 2024-10-21 16:36:41.992
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2024-10-21 16:36:41.992
+>>>>>>> 91ca76f1f17ef66c51a73bb9356f03ccbfb52973
 !MESSAGE A conflict occurred for CTRL+SHIFT+T:
 Binding(CTRL+SHIFT+T,
 	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
@@ -277,7 +287,11 @@ Binding(CTRL+SHIFT+T,
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.ui.contexts.window,,,system)
+<<<<<<< HEAD
 !SUBENTRY 1 org.eclipse.jface 2 0 2024-10-21 16:33:40.531
+=======
+!SUBENTRY 1 org.eclipse.jface 2 0 2024-10-21 16:36:41.992
+>>>>>>> 91ca76f1f17ef66c51a73bb9356f03ccbfb52973
 !MESSAGE A conflict occurred for ALT+SHIFT+R:
 Binding(ALT+SHIFT+R,
 	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.rename.element,Rename - Refactoring ,
@@ -296,7 +310,11 @@ Binding(ALT+SHIFT+R,
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.ui.contexts.window,,,system)
 
+<<<<<<< HEAD
 !ENTRY org.eclipse.ui 4 4 2024-10-21 16:33:43.952
+=======
+!ENTRY org.eclipse.ui 4 4 2024-10-21 16:36:44.771
+>>>>>>> 91ca76f1f17ef66c51a73bb9356f03ccbfb52973
 !MESSAGE Unable to create part
 !STACK 1
 org.eclipse.ui.PartInitException: Cannot determine URI for '/KitFit/src/main/java/br/itb/projeto/KitFit/model/repository/MensalidadeRepository.java'.
@@ -439,7 +457,11 @@ Caused by: org.eclipse.core.runtime.CoreException: Cannot determine URI for '/Ki
 	at org.eclipse.ui.internal.WorkbenchWindow.run(WorkbenchWindow.java:2291)
 	at org.eclipse.ui.texteditor.AbstractTextEditor.internalInit(AbstractTextEditor.java:3182)
 	... 121 more
+<<<<<<< HEAD
 !SUBENTRY 1 org.eclipse.core.filebuffers 4 0 2024-10-21 16:33:43.953
+=======
+!SUBENTRY 1 org.eclipse.core.filebuffers 4 0 2024-10-21 16:36:44.772
+>>>>>>> 91ca76f1f17ef66c51a73bb9356f03ccbfb52973
 !MESSAGE Cannot determine URI for '/KitFit/src/main/java/br/itb/projeto/KitFit/model/repository/MensalidadeRepository.java'.
 !STACK 1
 org.eclipse.core.runtime.CoreException: Cannot determine URI for '/KitFit/src/main/java/br/itb/projeto/KitFit/model/repository/MensalidadeRepository.java'.
@@ -579,16 +601,24 @@ org.eclipse.core.runtime.CoreException: Cannot determine URI for '/KitFit/src/ma
 	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
+<<<<<<< HEAD
 !SUBENTRY 2 org.eclipse.core.filebuffers 4 0 2024-10-21 16:33:43.954
 !MESSAGE Cannot determine URI for '/KitFit/src/main/java/br/itb/projeto/KitFit/model/repository/MensalidadeRepository.java'.
 
 !ENTRY org.eclipse.egit.ui 2 0 2024-10-21 16:33:44.603
+=======
+!SUBENTRY 2 org.eclipse.core.filebuffers 4 0 2024-10-21 16:36:44.773
+!MESSAGE Cannot determine URI for '/KitFit/src/main/java/br/itb/projeto/KitFit/model/repository/MensalidadeRepository.java'.
+
+!ENTRY org.eclipse.egit.ui 2 0 2024-10-21 16:36:45.406
+>>>>>>> 91ca76f1f17ef66c51a73bb9356f03ccbfb52973
 !MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
 user global configuration and to define the default location to store repositories: 'Z:\'. If this is
 not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
 EGit might behave differently since they see different configuration options.
 This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
 
+<<<<<<< HEAD
 !ENTRY org.eclipse.e4.ui.workbench 2 0 2024-10-21 16:33:44.722
 !MESSAGE Removing PartDescriptorImpl with the "org.eclipse.jdt.bcoview.views.BytecodeOutlineView" id and the "Bytecode" label.It points to the non available "bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" class. Bundle might have been uninstalled
 
@@ -1042,3 +1072,22 @@ java.lang.InterruptedException
 	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
 	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
 	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+=======
+!ENTRY org.eclipse.e4.ui.workbench 2 0 2024-10-21 16:36:45.498
+!MESSAGE Removing PartDescriptorImpl with the "org.eclipse.jdt.bcoview.views.BytecodeOutlineView" id and the "Bytecode" label.It points to the non available "bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" class. Bundle might have been uninstalled
+
+!ENTRY org.eclipse.e4.ui.workbench 2 0 2024-10-21 16:36:45.499
+!MESSAGE Removing PartDescriptorImpl with the "org.eclipse.jdt.bcoview.views.BytecodeReferenceView" id and the "Bytecode Reference" label.It points to the non available "bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" class. Bundle might have been uninstalled
+
+!ENTRY org.eclipse.e4.ui.workbench 2 0 2024-10-21 16:36:45.501
+!MESSAGE Removing PartDescriptorImpl with the "org.eclipse.lsp4e.callHierarchy.callHierarchyView" id and the "Call Hierarchy" label.It points to the non available "bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" class. Bundle might have been uninstalled
+
+!ENTRY org.eclipse.e4.ui.workbench 2 0 2024-10-21 16:36:45.502
+!MESSAGE Removing PartDescriptorImpl with the "org.eclipse.lsp4e.operations.typeHierarchy.TypeHierarchyView" id and the "Type Hierarchy" label.It points to the non available "bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" class. Bundle might have been uninstalled
+
+!ENTRY org.eclipse.e4.ui.workbench 2 0 2024-10-21 16:36:45.504
+!MESSAGE Removing PartDescriptorImpl with the "org.eclipse.lsp4e.ui.languageServersView" id and the "Language Servers" label.It points to the non available "bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" class. Bundle might have been uninstalled
+
+!ENTRY org.eclipse.ui 2 2 2024-10-21 16:37:01.323
+!MESSAGE Invalid property category path: org.springframework.ide.eclipse.beans.ui.properties.ProjectPropertyPage (bundle: org.springframework.ide.eclipse.xml.namespaces, propertyPage: org.springframework.ide.eclipse.beans.ui.namespaces.projectPropertyPage)
+>>>>>>> 91ca76f1f17ef66c51a73bb9356f03ccbfb52973
