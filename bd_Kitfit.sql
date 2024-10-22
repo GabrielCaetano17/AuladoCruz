@@ -24,12 +24,6 @@ CREATE TABLE Usuario
 GO
 INSERT Usuario (nome, email, senha, nivelAcesso, foto, dataCadastro, statusUsuario)
 VALUES ('Fulano da Silva', 'fulano@email.com.br', 'MTIzNDU2Nzg=', 'ADMIN', NULL, GETDATE(), 'ATIVO')
-INSERT Usuario (nome, email, senha, nivelAcesso, foto, dataCadastro, statusUsuario)
-VALUES ('Beltrana de Sá', 'beltrana@email.com.br', 'MTIzNDU2Nzg=', 'CLIENTE', NULL, GETDATE(), 'ATIVO')
-INSERT Usuario (nome, email, senha, nivelAcesso, foto, dataCadastro, statusUsuario)
-VALUES ('Sicrana de Oliveira', 'sicrana@email.com.br', 'MTIzNDU2Nzg=', 'CLIENTE', NULL, GETDATE(), 'ATIVO')
-INSERT Usuario (nome, email, senha, nivelAcesso, foto, dataCadastro, statusUsuario)
-VALUES ('Ordnael Zurc', 'ordnael@email.com.br', 'MTIzNDU2Nzg=', 'CLIENTE', NULL, GETDATE(), 'TROCAR_SENHA')
 GO
  
 CREATE TABLE Kit
@@ -107,3 +101,6 @@ Select nome, email From Usuario where email = '1@' AND senha = '12'
 Select email From Usuario where email = 'amo@'
  
 delete Assinatura where emailUsu = 'amo@'
+
+INSERT Usuario (nome, email, senha, nivelAcesso, foto, dataCadastro, statusUsuario)
+VALUES ('Gabriel', 'gabriela@email.com.br', '123', 'CLIENTE', NULL, GETDATE(), 'ATIVO')
